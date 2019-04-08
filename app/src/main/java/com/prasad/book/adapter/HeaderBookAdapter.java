@@ -1,6 +1,7 @@
 package com.prasad.book.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.prasad.book.BookDetailsActivity;
 import com.prasad.book.R;
 
 import java.util.List;
@@ -46,6 +48,14 @@ public class HeaderBookAdapter extends RecyclerView.Adapter<HeaderBookAdapter.Pr
         public ProjectViewHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent intent = new Intent(context,BookDetailsActivity.class);
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 }

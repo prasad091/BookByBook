@@ -1,12 +1,14 @@
 package com.prasad.book.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.prasad.book.BookDetailsActivity;
 import com.prasad.book.R;
 
 import butterknife.ButterKnife;
@@ -39,6 +41,14 @@ public class NewBookExtraAdapter extends RecyclerView.Adapter<NewBookExtraAdapte
         public NewBookExtraViewHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(this,itemView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent intent = new Intent(context,BookDetailsActivity.class);
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 }

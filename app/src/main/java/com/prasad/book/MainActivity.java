@@ -1,5 +1,6 @@
 package com.prasad.book;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -108,7 +109,8 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.shopping) {
-            Toast.makeText(MainActivity.this, "Action clicked", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(getApplicationContext(),BookDetailsActivity.class);
+            startActivity(intent);
             return true;
         }
 
